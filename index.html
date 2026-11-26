@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SXCam — Cámara IP Profesional para OBS Studio</title>
+  <style>
+    :root {
+      --bg: #0d0e13;
+      --card: #161821;
+      --border: #262938;
+      --accent: #4caf50;
+      --accent-hover: #43a047;
+      --text: #f1f3f5;
+      --muted: #9aa0b4;
+      --blue: #64b5f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(13, 14, 19, 0.9);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.4px;
+    }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+    .hero {
+      text-align: center;
+      padding: 36px 24px;
+      background: linear-gradient(145deg, #161821, #11131a);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(76, 175, 80, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(76, 175, 80, 0.35);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary {
+      background: #202330;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #282c3c; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html">SXCam</a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="privacy.html">Privacidad y Términos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">Versión 1.6.0 • Android</span>
+      <h1>Convierte tu Android en una cámara profesional para OBS</h1>
+      <p>
+        Transmisión de video por hardware H.264 y WebRTC de ultra baja latencia directamente
+        en tu red local Wi-Fi o por cable USB, sin servidores externos y con privacidad total.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="privacy.html">Política de Privacidad</a>
+        <a class="btn btn-secondary" href="privacy.html#terminos">Términos y Condiciones</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Ultra Baja Latencia</h3>
+        <p>Pipeline gráfico Zero-Copy en GPU (OpenGL ES 2.0 + MediaCodec + WebRTC UDP) optimizado para 1080p y 4K hasta 60 FPS.</p>
+      </article>
+      <article class="card">
+        <h3>Integración Directa con OBS</h3>
+        <p>Compatible con Fuente de navegador WebRTC, Fuente de medios H.264, conexión USB por ADB y Dock remoto de zoom.</p>
+      </article>
+      <article class="card">
+        <h3>Privacidad Total</h3>
+        <p>SXCam no recopila datos personales ni sube video a la nube. Todo el flujo permanece en tu red local.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>SXCam (com.dvddiazluc.sxcam) • <a href="privacy.html">Política de Privacidad y Términos</a> • Contacto: <a href="mailto:davidiaz1825@gmail.com">davidiaz1825@gmail.com</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad y Términos — SXCam</title>
+  <style>
+    :root {
+      --bg: #0d0e13;
+      --card: #161821;
+      --border: #262938;
+      --accent: #4caf50;
+      --text: #f1f3f5;
+      --muted: #b0b7c8;
+      --blue: #64b5f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(13, 14, 19, 0.9);
+      position: sticky;
+      top: 0;
+    }
+    .nav {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav a.back {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+    .doc-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+    h2 {
+      font-size: 18px;
+      color: var(--accent);
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+    p, li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    a { color: var(--blue); }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 12px 20px 36px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html">SXCam</a>
+      <a class="back" href="index.html">← Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="doc-card" id="privacidad">
+      <h1>Política de Privacidad de SXCam</h1>
+      <p class="meta">Aplicación: SXCam (<code>com.dvddiazluc.sxcam</code>) • Última actualización: 25 de noviembre de 2026</p>
+
+      <p>
+        La presente Política de Privacidad describe cómo <strong>SXCam</strong> trata la información y los permisos
+        del dispositivo cuando utilizas la aplicación en Android.
+      </p>
+
+      <h2>1. Recopilación y Compartición de Datos</h2>
+      <p>
+        <strong>SXCam no recopila, no almacena, no vende ni comparte información personal</strong>, datos analíticos,
+        telemetría, historial de uso ni contenido multimedia con servidores propios ni con terceros.
+      </p>
+
+      <h2>2. Uso de Permisos del Dispositivo</h2>
+      <ul>
+        <li>
+          <strong>Cámara (<code>android.permission.CAMERA</code>):</strong> Se utiliza exclusivamente para capturar
+          el flujo de video en tiempo real y enviarlo de forma directa hacia tu computadora (por ejemplo, OBS Studio)
+          dentro de tu red local. El video se procesa de manera efímera en la memoria del dispositivo y nunca se
+          almacena ni se sube a internet.
+        </li>
+        <li>
+          <strong>Servicio en Primer Plano de Cámara (<code>FOREGROUND_SERVICE_CAMERA</code>):</strong> Permite mantener
+          la transmisión estable y continua mientras la aplicación está en segundo plano o la pantalla se atenúa.
+        </li>
+        <li>
+          <strong>Red Local y Wi-Fi (<code>INTERNET</code>, <code>ACCESS_WIFI_STATE</code>):</strong> Necesario para
+          iniciar el servidor local HTTP/WebRTC en el puerto <code>4747</code> y mostrar tu dirección IP local dentro de la interfaz.
+        </li>
+        <li>
+          <strong>Notificaciones (<code>POST_NOTIFICATIONS</code>):</strong> Se utiliza únicamente para mostrar la
+          notificación persistente de estado mientras el servidor de transmisión está activo y permitir detenerlo rápidamente.
+        </li>
+        <li>
+          <strong>Bloqueo de Reposo (<code>WAKE_LOCK</code>):</strong> Evita que el sistema corte la conexión Wi-Fi o
+          suspenda el procesador durante transmisiones prolongadas.
+        </li>
+      </ul>
+
+      <h2>3. Almacenamiento Local</h2>
+      <p>
+        Las preferencias de configuración (resolución, FPS, lente seleccionada, filtros y PIN opcional de red local)
+        se guardan únicamente de forma local en tu dispositivo mediante <code>SharedPreferences</code>.
+      </p>
+
+      <h2>4. Seguridad en Red Local</h2>
+      <p>
+        Toda transmisión se realiza punto a punto dentro de la red local del usuario (Wi-Fi o túnel USB ADB).
+        La aplicación incluye protección opcional mediante clave PIN para restringir el acceso a la transmisión en redes compartidas.
+      </p>
+
+      <h2>5. Privacidad de Menores</h2>
+      <p>
+        SXCam no está dirigida a recopilar datos de menores de edad y no recolecta información personal de ningún usuario.
+      </p>
+
+      <h2>6. Contacto</h2>
+      <p>
+        Si tienes preguntas sobre esta Política de Privacidad o el tratamiento de datos en SXCam, puedes escribir a:
+        <a href="mailto:davidiaz1825@gmail.com">davidiaz1825@gmail.com</a>.
+      </p>
+    </section>
+
+    <section class="doc-card" id="terminos">
+      <h1>Términos y Condiciones de Uso</h1>
+      <p class="meta">SXCam • Última actualización: 25 de noviembre de 2026</p>
+
+      <h2>1. Uso de la Aplicación</h2>
+      <p>
+        SXCam está diseñada exclusivamente para capturar y transmitir video en vivo desde tu dispositivo Android hacia
+        una computadora o navegador dentro de tu red local o conexión USB directa.
+      </p>
+
+      <h2>2. Responsabilidad del Usuario</h2>
+      <p>
+        El usuario es responsable de asegurarse de que el dispositivo móvil y el equipo receptor se encuentren conectados
+        a una red local segura y confiable. El desarrollador no se hace responsable por interceptaciones derivadas del uso
+        en redes Wi-Fi públicas o sin contraseña.
+      </p>
+
+      <h2>3. Propiedad Intelectual y Disponibilidad</h2>
+      <p>
+        La aplicación se proporciona "tal cual", sin garantías implícitas de compatibilidad con todo hardware o software
+        de terceros, aunque se optimiza continuamente para dispositivos Android modernos y OBS Studio.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 SXCam • Desarrollado por DADLUC
+  </footer>
+</body>
+</html>
