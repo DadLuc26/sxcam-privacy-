@@ -103,7 +103,7 @@
   <main>
     <section class="doc-card" id="privacidad">
       <h1>Política de Privacidad de SXCam</h1>
-      <p class="meta">Aplicación: SXCam • Última actualización: 26 de noviembre de 2026</p>
+      <p class="meta">Aplicación: SXCam • Última actualización: 27 de noviembre de 2026</p>
 
       <p>
         La presente Política de Privacidad describe cómo <strong>SXCam</strong> trata la información y los permisos
@@ -112,7 +112,7 @@
 
       <h2>1. Recopilación de Datos y Publicidad (Google AdMob)</h2>
       <p>
-        <strong>El flujo de cámara es 100% local:</strong> SXCam no graba, no almacena y no envía video, audio ni
+        <strong>El flujo de cámara y micrófono es 100% local:</strong> SXCam no graba, no almacena y no envía video, audio ni
         archivos personales a servidores del desarrollador. Toda transmisión hacia OBS Studio o navegadores se
         realiza directamente dentro de tu red local o por cable USB.
       </p>
@@ -146,8 +146,15 @@
           almacena ni se sube a internet.
         </li>
         <li>
-          <strong>Servicio en Primer Plano de Cámara (<code>FOREGROUND_SERVICE_CAMERA</code>):</strong> Permite mantener
-          la transmisión estable y continua mientras la aplicación está en segundo plano o la pantalla se atenúa.
+          <strong>Micrófono (<code>android.permission.RECORD_AUDIO</code> — Opcional):</strong> Viene desactivado
+          por defecto y solo se solicita si activas el botón de micrófono en la app para transmitir audio en vivo
+          hacia la Fuente de navegador de OBS Studio (vía Wi-Fi, anclaje USB o ADB). El audio se procesa en tiempo real
+          en memoria, nunca se graba en disco ni se envía a servidores externos.
+        </li>
+        <li>
+          <strong>Servicio en Primer Plano de Cámara y Micrófono (<code>FOREGROUND_SERVICE_CAMERA</code>, <code>FOREGROUND_SERVICE_MICROPHONE</code>):</strong>
+          Permite mantener la transmisión estable y continua mientras la aplicación está en segundo plano o la pantalla
+          se atenúa (el tipo micrófono solo se activa cuando el usuario habilita explícitamente el envío de audio).
         </li>
         <li>
           <strong>Red Local y Wi-Fi (<code>INTERNET</code>, <code>ACCESS_WIFI_STATE</code>):</strong> Necesario para
@@ -191,22 +198,32 @@
 
     <section class="doc-card" id="terminos">
       <h1>Términos y Condiciones de Uso</h1>
-      <p class="meta">SXCam • Última actualización: 26 de noviembre de 2026</p>
+      <p class="meta">SXCam • Última actualización: 27 de noviembre de 2026</p>
 
       <h2>1. Uso de la Aplicación</h2>
       <p>
-        SXCam está diseñada exclusivamente para capturar y transmitir video en vivo desde tu dispositivo Android hacia
-        una computadora o navegador dentro de tu red local o conexión USB directa.
+        SXCam está diseñada exclusivamente para capturar y transmitir video en vivo —y, de forma opcional, audio del
+        micrófono— desde tu dispositivo Android hacia una computadora o navegador dentro de tu red local Wi-Fi,
+        anclaje USB o túnel USB ADB.
       </p>
 
-      <h2>2. Responsabilidad del Usuario</h2>
+      <h2>2. Captura y Transmisión Opcional de Audio</h2>
+      <p>
+        La transmisión de audio viene desactivada por defecto y requiere que el usuario habilite explícitamente el
+        micrófono y conceda el permiso <code>RECORD_AUDIO</code>. Cuando está activa, el audio se captura y envía en
+        tiempo real hacia la Fuente de navegador de OBS Studio (WebRTC / MSE local) únicamente dentro de tu red o
+        conexión USB, sin almacenarse en el dispositivo ni enviarse a servidores externos.
+      </p>
+
+      <h2>3. Responsabilidad del Usuario</h2>
       <p>
         El usuario es responsable de asegurarse de que el dispositivo móvil y el equipo receptor se encuentren conectados
-        a una red local segura y confiable. El desarrollador no se hace responsable por interceptaciones derivadas del uso
-        en redes Wi-Fi públicas o sin contraseña.
+        a una red local segura y confiable, así como de contar con el consentimiento correspondiente al transmitir
+        imagen o audio. El desarrollador no se hace responsable por interceptaciones derivadas del uso en redes Wi-Fi
+        públicas o sin contraseña.
       </p>
 
-      <h2>3. Propiedad Intelectual y Disponibilidad</h2>
+      <h2>4. Propiedad Intelectual y Disponibilidad</h2>
       <p>
         La aplicación se proporciona "tal cual", sin garantías implícitas de compatibilidad con todo hardware o software
         de terceros, aunque se optimiza continuamente para dispositivos Android modernos y OBS Studio.
